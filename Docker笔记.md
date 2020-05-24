@@ -15,7 +15,7 @@
 
 ​	Docker 是一个开源项目，诞生于 2013 年初，最初是 dotCloud 公司内部的一个业余项目。它基于 Google 公司推出的 Go 语言实现。 项目后来加入了 Linux 基金会，遵从了 Apache 2.0 协议，项目代码在 [GitHub](https://github.com/docker/docker) 上进行维护。
 
-​	![](F:/Desktop/docker笔记/image/1-3.png)
+​	![](image/1-3.png)
 
 
 
@@ -49,7 +49,7 @@
 
 ​	下面的图片比较了 Docker 和传统虚拟化方式的不同之处，可见容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。
 
-![](F:/Desktop/docker笔记/image/1-1.png)
+![](image/1-1.png)
 
 与传统的虚拟机相比，Docker优势体现为启动速度快、占用体积小。
 
@@ -59,7 +59,7 @@
 
 ​	Docker是一个客户端-服务器（C/S）架构程序。Docker客户端只需要向Docker服务器或者守护进程发出请求，服务器或者守护进程将完成所有工作并返回结果。Docker提供了一个命令行工具Docker以及一整套RESTful API。你可以在同一台宿主机上运行Docker守护进程和客户端，也可以从本地的Docker客户端连接到运行在另一台宿主机上的远程Docker守护进程。
 
-![](F:/Desktop/docker笔记/image/1-2.png)
+![](image/1-2.png)
 
 ### 1.4.2 Docker镜像与容器
 
@@ -101,7 +101,7 @@
 
 ​	Docker官方建议在Ubuntu中安装，因为Docker是基于Ubuntu发布的，而且一般Docker出现的问题Ubuntu是最先更新或者打补丁的。在很多版本的CentOS中是不支持更新最新的一些补丁包的。
 
-​	学习的环境都使用的是CentOS，因此这里我们将Docker安装到CentOS上。注意：这里建议安装在CentOS7.x以上的版本，在CentOS6.x的版本中，安装前需要安装其他很多的环境而且Docker很多补丁不支持更新。
+​	由于我们学习的环境都使用的是CentOS，因此这里我们将Docker安装到CentOS上。注意：这里建议安装在CentOS7.x以上的版本，在CentOS6.x的版本中，安装前需要安装其他很多的环境而且Docker很多补丁不支持更新。
 
 ​	请直接挂载课程配套的Centos7.x镜像	
 
@@ -524,15 +524,15 @@ Dockerfile是由一系列命令和参数构成的脚本，这些命令应用于�
 
 
 
-| 命令                               | 作用                                                         |
-| ---------------------------------- | ------------------------------------------------------------ |
-| FROM image_name:tag                | 定义了使用哪个基础镜像启动构建流程                           |
-| MAINTAINER user_name               | 声明镜像的创建者                                             |
-| ENV key value                      | 设置环境变量 (可以写多条)                                    |
-| RUN command                        | 是Dockerfile的核心部分(可以写多条)                           |
+| 命令                                 | 作用                                 |
+| ---------------------------------- | ---------------------------------- |
+| FROM image_name:tag                | 定义了使用哪个基础镜像启动构建流程                  |
+| MAINTAINER user_name               | 声明镜像的创建者                           |
+| ENV key value                      | 设置环境变量 (可以写多条)                     |
+| RUN command                        | 是Dockerfile的核心部分(可以写多条)            |
 | ADD source_dir/file dest_dir/file  | 将宿主机的文件复制到容器内，如果是一个压缩文件，将会在复制后自动解压 |
-| COPY source_dir/file dest_dir/file | 和ADD相似，但是如果有压缩文件并不能解压                      |
-| WORKDIR path_dir                   | 设置工作目录                                                 |
+| COPY source_dir/file dest_dir/file | 和ADD相似，但是如果有压缩文件并不能解压              |
+| WORKDIR path_dir                   | 设置工作目录                             |
 
 ## 6.3 使用脚本创建镜像
 
